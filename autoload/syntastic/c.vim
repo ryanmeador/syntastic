@@ -93,8 +93,7 @@ function! syntastic#c#ReadConfig(file)
 
     " try to read config file
     try
-        let lines = map(readfile(config),
-                    \ 'substitute(v:val, ''\'', ''/'', ''g'')')
+        let lines = readfile(config)
     catch /E484/
         return ''
     endtry
